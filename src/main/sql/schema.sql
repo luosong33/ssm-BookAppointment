@@ -6,7 +6,6 @@ CREATE TABLE `book` (
   `number` int(11) NOT NULL COMMENT '馆藏数量',
   PRIMARY KEY (`book_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='图书表';
-
 -- 初始化图书数据
 INSERT INTO `book` (`book_id`, `name`, `introd`,`number`)
 VALUES
@@ -26,12 +25,13 @@ CREATE TABLE `appointment` (
   PRIMARY KEY (`book_id`, `student_id`),
   INDEX `idx_appoint_time` (`appoint_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='预约图书表';
+
 -- 创建学生数据表
 CREATE TABLE `student`(
 	`student_id` bigint(20) NOT NULL COMMENT '学生ID',
 	`password`  bigint(20) NOT NULL COMMENT '密码',
 	PRIMARY KEY(`student_id`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='学生统计表';	
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='学生统计表';
 -- 初始化学生数据
 INSERT INTO `student`(`student_id`,`password`) 
 VALUES

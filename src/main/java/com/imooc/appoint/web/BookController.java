@@ -35,11 +35,11 @@ public class BookController {
 	//获取图书列表
 	@RequestMapping(value="/list",method = RequestMethod.GET)
 	private String List(Model model){
-		List<Book> list = bookService.getList();
-		model.addAttribute("list", list);
-		
-		return "list";
-	}
+        List<Book> list = bookService.getList();
+        model.addAttribute("list", list);
+
+        return "list";
+    }
 	//搜索是否有某图书
 	@RequestMapping(value="/search",method = RequestMethod.POST)
 	private void  search(HttpServletRequest req,HttpServletResponse resp) 
